@@ -3,10 +3,8 @@ import { program } from "commander";
 program
   .option("-m, --month <n>", "1~12を入力", checkInput)
   .option("-y, --year <n>", "1970~2100を入力", checkInput);
-
 program.parse();
 const options = program.opts();
-// console.log(options.month, options.year);
 
 const today = new Date();
 let year;
