@@ -11,16 +11,23 @@ let year;
 let month;
 
 if (options.year !== undefined) {
-  if (options.year >= 1970 && options.year <= 2100) year = options.year;
-} else year = today.getFullYear();
+  if (options.year >= 1970 && options.year <= 2100) {
+    year = options.year;
+  }
+} else {
+  year = today.getFullYear();
+}
 if (options.month !== undefined) {
-  if (options.month <= 12 && options.month >= 1) month = options.month;
-} else month = today.getMonth() + 1;
-
+  if (options.month <= 12 && options.month >= 1) {
+    month = options.month;
+  }
+} else {
+  month = today.getMonth() + 1;
+}
 const firstDate = new Date(year, month - 1, 1);
 const lastDate = new Date(year, month, 0);
 
-console.log("\t" + month + "月 " + year);
+console.log(`\t${month}月 ${year}`);
 console.log("日 月 火 水 木 金 土");
 
 process.stdout.write("   ".repeat(firstDate.getDay()));
